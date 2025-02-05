@@ -1,0 +1,177 @@
+/*
+Theme Name: Storefront Child
+Theme URI: https://wordpress.org/themes/storefront/
+Author: Sam Williams
+Author URI: https://wordpress.org/
+Description: Theme for an ecommerce website for a cheese shop using woocommerce and tailwind css
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: storefront-child
+*/
+
+
+/* general style */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 1%);
+    font-family: sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* header style */
+
+.header-container {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.navbar-fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.navbar-brand img {
+    flex-shrink: 1;
+    width: 100%;
+}
+
+.navbar-brand-mobile img {
+    flex-shrink: 1;
+    width: 100%;
+}
+
+.navbar-list-flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar-list-flex>a {
+    text-decoration: none;
+    color: inherit;
+    padding: 2rem;
+}
+
+.navbar-list-flex-mobile>a {
+    text-decoration: none;
+    color: inherit;
+    padding: .5rem;
+}
+
+
+/* info banner */
+
+.info-banner {
+    display: flex;
+    justify-content: center;
+    background-color: blanchedalmond;
+    padding: 1rem;
+}
+
+
+/* navbar mobile */
+
+.navbar-list-flex-mobile.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+/* navbar tablets and under */
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    .info-banner {
+        display: none;
+    }
+    .navbar-item {
+        display: none;
+    }
+    .navbar-list-flex {
+        display: none;
+    }
+    .navbar {
+        padding: 0;
+    }
+    .navbar-brand {
+        display: none;
+    }
+    .navbar-brand-mobile {
+        display: block;
+        padding: 1rem;
+    }
+}
+
+
+/* footer style */
+
+.footer-container {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    bottom: 0;
+    width: 100%;
+    background-color: hsl(0, 0%, 85%);
+    padding: 1rem;
+}
+
+.footer-container h5 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav-list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-nav-list li {
+    padding-bottom: .5rem;
+}
+
+
+/* footer tablets and under */
+
+@media screen and (max-width: 768px) {
+    .footer-map {
+        display: none
+    }
+}
+
