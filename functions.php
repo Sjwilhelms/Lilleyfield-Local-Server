@@ -42,28 +42,26 @@ add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
 // remove woocommerce default css
 
-// add_filter('woocommerce_enqueue_styles', 'jk_dequeue_styles');
-// function jk_dequeue_styles($enqueue_styles) {
-//     unset($enqueue_styles['woocommerce-general']);
-//     unset($enqueue_styles['woocommerce-layout']);
-//     unset($enqueue_styles['woocommerce-smallscreen']);
-//     return $enqueue_styles;
-// }
+add_filter('woocommerce_enqueue_styles', 'jk_dequeue_styles');
+function jk_dequeue_styles($enqueue_styles) {
+    unset($enqueue_styles['woocommerce-general']);
+    unset($enqueue_styles['woocommerce-layout']);
+    unset($enqueue_styles['woocommerce-smallscreen']);
+    return $enqueue_styles;
+}
 
 // remove wordpress default css
 
-// Disable WordPress default style.css
-// function remove_default_styles() {
-//     wp_dequeue_style('wp-block-library');
-//     wp_dequeue_style('wp-block-library-theme');
-//     wp_dequeue_style('classic-theme-styles');
-//     wp_dequeue_style('global-styles');
-// }
-// add_action('wp_enqueue_scripts', 'remove_default_styles', 100);
+function remove_default_styles() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('classic-theme-styles');
+    wp_dequeue_style('global-styles');
+}
+add_action('wp_enqueue_scripts', 'remove_default_styles', 100);
 
 // remove storefront built in header
 
-// In your child theme's functions.php
 add_action('init', 'remove_storefront_header');
 function remove_storefront_header() {
     remove_action('storefront_header', 'storefront_header_container', 0);
@@ -108,9 +106,3 @@ add_filter('template_include', function($template) {
 // add_action('woocommerce_before_main_content', function() {
 //     error_log('WooCommerce template path: ' . wc_locate_template(''));
 // }, 1);
-
-
-// single-product.php reorder title
-
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-add_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 20);

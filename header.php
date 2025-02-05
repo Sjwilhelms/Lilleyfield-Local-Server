@@ -34,7 +34,7 @@
                         </div>
                         <!-- navbar toggler -->
                         <div class="navbar-toggler hidden">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/lilleyfield_cheese_perimeter.png"</i>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese.png" alt="Menu button">
                         </div>
                     </div>
                 </div>

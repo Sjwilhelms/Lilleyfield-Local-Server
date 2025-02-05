@@ -109,7 +109,9 @@ body {
 
 @media screen and (max-width: 768px) {
     .navbar {
+        display: flex;
         padding: 1rem;
+        justify-content: space-between;
     }
     .info-banner {
         display: none;
@@ -125,6 +127,19 @@ body {
     }
     .navbar-brand {
         display: none;
+    }
+    .navbar-toggler {
+        display: block;
+        flex-shrink: 0.5;
+        width: 150px;
+        height: 150px;
+        padding: 1rem;
+        padding-bottom: 2rem;
+    }
+    .navbar-toggler img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
     .navbar-brand-mobile {
         display: block;
@@ -174,4 +189,3 @@ body {
         display: none
     }
 }
-
