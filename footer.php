@@ -3,7 +3,7 @@
         <div class="footer-container">
             <div class="policy">
                 <h5>Policy</h5>
-                <p>&copy <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
+                <p>&copy <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
             </div>
             <div class="quick-links">
                 <h5>Quick Links</h5>

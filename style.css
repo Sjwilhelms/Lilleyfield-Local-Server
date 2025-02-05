@@ -11,7 +11,18 @@ Text Domain: storefront-child
 */
 
 
-/* general style */
+/*
+Main stylesheet structure:
+
+1. Reset/Normalize
+2. Typography
+3. Layout
+4. Components
+5. WooCommerce Styles
+*/
+
+
+/* 1. Reset/Normalize */
 
 body {
     margin: 0;
@@ -31,6 +42,12 @@ body {
 .hidden {
     display: none;
 }
+
+
+/* 2. Typography */
+
+
+/* 3. Layout */
 
 
 /* header style */
@@ -189,3 +206,9 @@ body {
         display: none
     }
 }
+
+
+/* 4. Components */
+
+
+/* 5. WooCommerce Styles */
