@@ -28,9 +28,17 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: hsl(0, 0%, 90%);
     color: hsl(0, 0%, 1%);
     font-family: sans-serif;
+}
+
+.site-main {
+    flex: 1;
+    padding: 2rem;
 }
 
 * {
@@ -168,7 +176,7 @@ body {
 /* footer style */
 
 .footer-container {
-    position: fixed;
+    margin-top: auto;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -212,3 +220,113 @@ body {
 
 
 /* 5. WooCommerce Styles */
+
+
+/* product-archive.php */
+
+
+/* page header */
+
+.page-title {
+    padding: 1rem;
+}
+
+.woocommerce-result-count {
+    margin: 1rem;
+}
+
+.woocommerce-ordering {
+    margin: 1rem;
+}
+
+.orderby {
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+
+/* products display */
+
+ul.products {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin: 1rem;
+    flex-wrap: wrap;
+}
+
+ul.products li.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75%;
+    height: 24px;
+    line-height: 24px;
+}
+
+ul.products li.product .onsale {
+    background: #e63946;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    position: absolute;
+}
+
+ul.products li.product img {
+    border-radius: 5px;
+}
+
+ul.products li.product a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul.products li.product h2 {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* add to cart button */
+
+ul.products li.product a.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    text-decoration: none;
+    color: hsl(0, 0%, 85%);
+    border: 1px solid;
+    padding: 5px;
+    background-color: tomato;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+/* view cart button */
+
+ul.products li.product a.added_to_cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    text-decoration: none;
+    color: hsl(0, 0%, 85%);
+    border: 1px solid;
+    padding: 5px;
+    background-color: tomato;
+    margin-top: 10px;
+    border-radius: 10px;
+}
