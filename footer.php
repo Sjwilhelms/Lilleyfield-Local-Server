@@ -11,7 +11,7 @@
                     <li class="nav-item"><a href="#">Shop</a></li>
                     <li class="nav-item"><a href="#">Visit</a></li>
                     <li class="nav-item"><a href="#">Account</a></li>
-                    <li class="nav-item"><a href="#">Cart £0.00</a></li>
+                    <li class="nav-item"><a href="#">Cart <?php echo WC()->cart->get_cart_total(); ?></a></li>
                 </ul>
             </div>
             <div class="footer-map">

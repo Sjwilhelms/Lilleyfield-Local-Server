@@ -51,7 +51,7 @@
                     <li class="navbar-item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt=""> Account</li>
                 </a>
                 <a href="<?php echo wc_get_cart_url(); ?>">
-                    <li class="navbar-item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt=""> Cart £0.00</li>
+                    <li class="navbar-item"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt=""> Cart <?php echo WC()->cart->get_cart_total(); ?></li>
                 </a>
             </ul>
             <!-- mobile navlinks -->
