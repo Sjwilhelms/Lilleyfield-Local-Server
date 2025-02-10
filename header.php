@@ -57,16 +57,16 @@
             <!-- mobile navlinks -->
             <ul class="navbar-list-flex-mobile hidden">
                 <a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>">
-                    <li class="navbar-item-mobile"><img src="assets/cheese_favicon_1.png" class="active-icon" alt=""> Shop</li>
+                    <li class="navbar-item-mobile"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt=""> Shop</li>
                 </a>
                 <a href="#">
-                    <li class="navbar-item-mobile"><img src="assets/cheese_favicon_1.png" class="active-icon" alt=""> Visit</li>
+                    <li class="navbar-item-mobile"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt=""> Visit</li>
                 </a>
                 <a href="<?php echo wc_get_page_permalink('myaccount'); ?>">
-                    <li class="navbar-item-mobile"><img src="assets/cheese_favicon_1.png" class="active-icon" alt=""> Account</li>
+                    <li class="navbar-item-mobile"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt=""> Account</li>
                 </a>
                 <a href="<?php echo wc_get_cart_url(); ?>">
-                    <li class="navbar-item-mobile"><img src="assets/cheese_favicon_1.png" class="active-icon" alt=""> Cart £0.00</li>
+                    <li class="navbar-item-mobile"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt=""> Cart £0.00</li>
                 </a>
             </ul>
         </div>

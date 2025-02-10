@@ -53,14 +53,14 @@ body {
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('wp-content/themes/storefront-child/fonts/dmsans-variablefont_opszwght-webfont.woff2') format('woff2'), url('wp-content/themes/storefront-child/fonts/dmsans-variablefont_opszwght-webfont.woff') format('woff');
+    src: url('/wp-content/themes/storefront-child/fonts/dmsans-variablefont_opszwght-webfont.woff2') format('woff2'), url('wp-content/themes/storefront-child/fonts/dmsans-variablefont_opszwght-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'DM Serif Text';
-    src: url('wp-content/themes/storefront-child/fonts/dmseriftext-regular-webfont.woff2') format('woff2'), url('wp-content/themes/storefront-child/fonts/dmseriftext-regular-webfont.woff') format('woff');
+    src: url('/wp-content/themes/storefront-child/fonts/dmseriftext-regular-webfont.woff2') format('woff2'), url('wp-content/themes/storefront-child/fonts/dmseriftext-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -78,6 +78,16 @@ h4,
 h5,
 h6 {
     font-family: 'DM Serif Text', serif;
+}
+
+
+/* color code */
+
+:root {
+    --primary-color: tomato;
+    --header-color: hsl(0, 0%, 85%);
+    --text-color: hsl(0, 0%, 1%);
+    --bg-color: hsl(0, 0%, 90%);
 }
 
 
@@ -254,6 +264,122 @@ h6 {
 /* 4. Components */
 
 
+/* Base button styles that we'll repeat where needed */
+
+ul.products li.product a.button,
+ul.products li.product a.added_to_cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    text-decoration: none;
+    color: hsl(0, 0%, 85%);
+    border: 1px solid;
+    padding: 5px;
+    background-color: tomato;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+
+/* Single product page buttons */
+
+.single_add_to_cart_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    text-decoration: none;
+    color: hsl(0, 0%, 85%);
+    border: 1px solid;
+    padding: 5px;
+    background-color: tomato;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+
+/* Reset variations button */
+
+a.reset_variations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    text-decoration: none;
+    color: hsl(0, 0%, 85%);
+    border: 1px solid;
+    padding: 5px;
+    background-color: tomato;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+
+/* Hover states for all buttons */
+
+ul.products li.product a.button:hover,
+ul.products li.product a.added_to_cart:hover,
+.single_add_to_cart_button:hover,
+a.reset_variations:hover {
+    background-color: hsl(9, 100%, 55%);
+    transform: translateY(-1px);
+}
+
+
+/* Active states for all buttons */
+
+ul.products li.product a.button:active,
+ul.products li.product a.added_to_cart:active,
+.single_add_to_cart_button:active,
+a.reset_variations:active {
+    transform: translateY(0);
+}
+
+
+/* Loading state */
+
+.button.loading {
+    opacity: 0.8;
+    padding-right: 35px;
+    position: relative;
+}
+
+.button.loading::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    .single_add_to_cart_button {
+        width: 100%;
+    }
+    ul.products li.product a.button,
+    ul.products li.product a.added_to_cart,
+    a.reset_variations {
+        width: 100%;
+    }
+}
+
+
 /* 5. WooCommerce Styles */
 
 
@@ -399,40 +525,6 @@ ul.products li.product h2 {
 }
 
 
-/* add to cart button */
-
-ul.products li.product a.button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    text-decoration: none;
-    color: hsl(0, 0%, 85%);
-    border: 1px solid;
-    padding: 5px;
-    background-color: tomato;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-
-
-/* view cart button */
-
-ul.products li.product a.added_to_cart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    text-decoration: none;
-    color: hsl(0, 0%, 85%);
-    border: 1px solid;
-    padding: 5px;
-    background-color: tomato;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-
-
 /* single-product.php styles */
 
 
@@ -531,33 +623,6 @@ form.variations_form {
 
 .quantity .qty {
     /* Number input */
-}
-
-a.reset_variations {
-    width: 70%;
-    text-decoration: none;
-    color: hsl(0, 0%, 85%);
-    border: 1px solid;
-    padding: 5px;
-    background-color: tomato;
-    border-radius: 10px;
-}
-
-
-/* Add to Cart Button */
-
-.single_add_to_cart_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    text-decoration: none;
-    color: hsl(0, 0%, 85%);
-    border: 1px solid;
-    padding: 5px;
-    background-color: tomato;
-    margin-top: 10px;
-    border-radius: 10px;
 }
 
 
