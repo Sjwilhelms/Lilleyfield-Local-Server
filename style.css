@@ -31,9 +31,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: hsl(0, 0%, 90%);
-    color: hsl(0, 0%, 1%);
-    font-family: sans-serif;
 }
 
 .site-main {
@@ -53,6 +50,35 @@ body {
 
 
 /* 2. Typography */
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('wp-content/themes/storefront-child/fonts/dmsans-variablefont_opszwght-webfont.woff2') format('woff2'), url('wp-content/themes/storefront-child/fonts/dmsans-variablefont_opszwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Serif Text';
+    src: url('wp-content/themes/storefront-child/fonts/dmseriftext-regular-webfont.woff2') format('woff2'), url('wp-content/themes/storefront-child/fonts/dmseriftext-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 1%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'DM Serif Text', serif;
+}
 
 
 /* 3. Layout */
@@ -229,6 +255,29 @@ body {
 
 
 /* 5. WooCommerce Styles */
+
+
+/* All notices */
+
+.woocommerce-notices-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Notice with a button */
+
+.woocommerce-message .button {
+    /* styles */
+}
+
+
+/* Dismiss (×) button */
+
+.woocommerce-message .woocommerce-close-message {
+    /* styles */
+}
 
 
 /* product-archive.php */
