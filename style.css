@@ -156,8 +156,8 @@ body {
     .navbar-toggler {
         display: block;
         flex-shrink: 0.5;
-        width: 150px;
-        height: 150px;
+        width: 75px;
+        height: 75px;
         padding: 1rem;
         padding-bottom: 2rem;
     }
@@ -210,8 +210,17 @@ body {
 /* footer tablets and under */
 
 @media screen and (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
     .footer-map {
         display: none
+    }
+    .quick-links {
+        margin: none;
     }
 }
 
