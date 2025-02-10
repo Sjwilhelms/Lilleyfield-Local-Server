@@ -67,8 +67,8 @@ body {
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background-color: hsl(0, 0%, 90%);
-    color: hsl(0, 0%, 1%);
+    color: var(--bg-color);
+    color: var(--text-color);
 }
 
 h1,
@@ -84,8 +84,9 @@ h6 {
 /* color code */
 
 :root {
-    --primary-color: tomato;
+    --accent-color: tomato;
     --header-color: hsl(0, 0%, 85%);
+    --info-color: blanchedalmond;
     --text-color: hsl(0, 0%, 1%);
     --bg-color: hsl(0, 0%, 90%);
 }
@@ -97,7 +98,7 @@ h6 {
 /* header style */
 
 .header-container {
-    background-color: hsl(0, 0%, 85%);
+    background-color: var(--header-color);
 }
 
 .navbar-fullscreen {
@@ -148,7 +149,7 @@ h6 {
 .info-banner {
     display: flex;
     justify-content: center;
-    background-color: blanchedalmond;
+    background-color: var(--info-color);
     padding: 1rem;
 }
 
@@ -219,7 +220,7 @@ h6 {
     flex-wrap: wrap;
     bottom: 0;
     width: 100%;
-    background-color: hsl(0, 0%, 85%);
+    background-color: var(--header-color);
     padding: 1rem;
 }
 
@@ -273,10 +274,10 @@ ul.products li.product a.added_to_cart {
     align-items: center;
     width: 70%;
     text-decoration: none;
-    color: hsl(0, 0%, 85%);
+    color: var(--text-color);
     border: 1px solid;
     padding: 5px;
-    background-color: tomato;
+    background-color: var(--info-color);
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -291,10 +292,10 @@ ul.products li.product a.added_to_cart {
     align-items: center;
     width: 20%;
     text-decoration: none;
-    color: hsl(0, 0%, 85%);
+    color: var(--text-color);
     border: 1px solid;
     padding: 5px;
-    background-color: tomato;
+    background-color: var(--info-color);
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -309,10 +310,10 @@ a.reset_variations {
     align-items: center;
     width: 70%;
     text-decoration: none;
-    color: hsl(0, 0%, 85%);
+    color: var(--text-color);
     border: 1px solid;
     padding: 5px;
-    background-color: tomato;
+    background-color: var(--info-color);
     border-radius: 10px;
     transition: all 0.3s ease;
 }
@@ -324,7 +325,7 @@ ul.products li.product a.button:hover,
 ul.products li.product a.added_to_cart:hover,
 .single_add_to_cart_button:hover,
 a.reset_variations:hover {
-    background-color: hsl(9, 100%, 55%);
+    background-color: var(--accent-color);
     transform: translateY(-1px);
 }
 
@@ -353,7 +354,7 @@ a.reset_variations:active {
     right: 10px;
     width: 16px;
     height: 16px;
-    border: 2px solid #fff;
+    border: 2px solid var(--info-color);
     border-radius: 50%;
     border-top-color: transparent;
     animation: spin 1s linear infinite;
@@ -451,7 +452,7 @@ ul.products li.product {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: white;
+    background: var(--header-color);
     position: relative;
     width: 100%;
     aspect-ratio: 2/3;
@@ -495,8 +496,8 @@ ul.products li.product img {
 /* Sale badge */
 
 ul.products li.product .onsale {
-    background: #e63946;
-    color: white;
+    background: var(--accent-color);
+    color: var(--bg-color);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     position: absolute;
@@ -663,7 +664,7 @@ form.variations_form {
 /* Style product tabs */
 
 .woocommerce-tabs .tabs {
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid var(--text-color);
     padding: 0;
     margin: 0 0 2rem;
     padding-left: 2rem;
@@ -676,7 +677,7 @@ form.variations_form {
 }
 
 .woocommerce-tabs .tabs li.active {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid var(--text-color);
     margin-bottom: -2px;
 }
 
