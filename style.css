@@ -283,7 +283,7 @@ h6 {
 /* product-archive.php */
 
 
-/* page header */
+/* product grid title and ordering */
 
 .page-title {
     padding: 1rem;
@@ -301,9 +301,6 @@ h6 {
     padding: 0.5rem;
     border-radius: 4px;
 }
-
-
-/* products-archive.php styles */
 
 
 /* Product grid container */
@@ -446,13 +443,6 @@ ul.products li.product a.added_to_cart {
     grid-template-columns: 40% 60%;
     gap: 2rem;
     padding: 2rem;
-}
-
-
-/* Product Title */
-
-.single-product .product_title {
-    /* Main product heading */
 }
 
 
@@ -638,5 +628,25 @@ a.reset_variations {
     width: 100%;
 }
 
-.upsells.products
+
+/* .upsells.products{} */
+
+
 /* Up-sells section */
+
+
+/* WooCommerce Responsive Styles */
+
+@media screen and (max-width: 768px) {
+    .single-product div.product {
+        display: block;
+    }
+    .woocommerce-product-gallery.woocommerce-product-gallery,
+    .summary.entry-summary,
+    .woocommerce-tabs.wc-tabs-wrapper,
+    section.related.products {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
