@@ -20,6 +20,14 @@ class CHI_Enqueue_Scripts {
             '1.0.0',
             true
         );
+
+        wp_enqueue_script(
+            'active-navlinks',
+            CHI_THEME_DIR_URI . '/js/active-navlinks.js',
+            ['jquery'],
+            '1.0.0',
+            true
+        );
     }
     
     public static function get_instance() {

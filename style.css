@@ -100,6 +100,10 @@ h6 {
     font-family: 'DM Serif Text', serif;
 }
 
+h1 {
+    padding: 1rem;
+}
+
 
 /* color code */
 
@@ -518,7 +522,7 @@ ul.products li.product img {
 ul.products li.product .onsale {
     background: var(--accent-color);
     color: var(--bg-color);
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     border-radius: 4px;
     position: absolute;
     top: 1rem;
@@ -671,7 +675,7 @@ table.variations select {
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #eee;
-    font-size: 0.9rem;
+    font-size: 0.5rem;
 }
 
 
@@ -763,4 +767,24 @@ table.variations select {
         display: block;
         margin-bottom: 20px;
     }
+}
+
+
+/* my-account.php */
+
+.woocommerce-MyAccount-navigation-link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.woocommerce-MyAccount-content p {
+    padding: 1rem;
 }
