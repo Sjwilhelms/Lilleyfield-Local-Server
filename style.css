@@ -824,4 +824,71 @@ table.variations select {
 }
 
 
-/*  */
+/* cart.php */
+
+.woocommerce-cart .shop_table {
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.woocommerce-cart .cart-empty {
+    padding: 1rem;
+}
+
+.woocommerce-cart .cart_item td,
+.woocommerce-cart .cart_item th {
+    padding: 1rem;
+}
+
+.woocommerce-cart .cart_item,
+a.button.wc-backward {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: inherit;
+    text-decoration: none;
+}
+
+.woocommerce-cart .cart_item img {
+    border-radius: 5px;
+    padding: 1rem;
+    height: 200px;
+    width: auto;
+}
+
+.woocommerce-cart .cart_item a {
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+}
+
+.woocommerce-cart .cart_item a.remove {
+    font-size: 2rem;
+}
+
+.woocommerce-cart .product-name {
+    font-weight: bold;
+}
+
+.woocommerce-cart .quantity .qty {
+    width: 70px;
+    text-align: center;
+}
+
+.cart_totals {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.cart_totals .order-total {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.wc-proceed-to-checkout .button {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
