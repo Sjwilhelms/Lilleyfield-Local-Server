@@ -828,9 +828,38 @@ table.variations select {
 
 .woocommerce-cart .shop_table {
     border: 1px solid #ddd;
-    margin-bottom: 30px;
-    padding: 1rem;
-    margin-top: 1rem;
+    margin: 1rem 0 30px;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .woocommerce-cart .cart_item td {
+        display: block;
+        padding: 0.5rem;
+        text-align: right;
+    }
+    th.product-name,
+    th.product-price,
+    th.product-quantity,
+    th.product-subtotal {
+        display: none;
+    }
+    .woocommerce-cart .cart_item td:before {
+        content: attr(data-title);
+        float: left;
+        font-weight: bold;
+    }
+    .woocommerce-cart .product-remove {
+        text-align: center;
+    }
+    .woocommerce-cart .cart_item td.product-remove,
+    .woocommerce-cart .cart_item td.product-thumbnail {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+    }
 }
 
 .woocommerce-cart .cart-empty {
@@ -851,9 +880,11 @@ a.button.wc-backward {
 }
 
 .woocommerce-cart .cart_item img {
-    padding: 1rem;
-    height: 200px;
+    padding: 0.5rem;
+    height: auto;
+    max-height: 150px;
     width: auto;
+    max-width: 100%;
 }
 
 .attachment-woocommerce_thumbnail {
