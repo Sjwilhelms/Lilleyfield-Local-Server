@@ -99,6 +99,50 @@ function custom_wc_account_menu_items($menu_items) {
 }
 add_filter('woocommerce_account_menu_items', 'custom_wc_account_menu_items');
 
+// ajax add to cart
+
+add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
+    ob_start();
+    ?>
+    <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="<?php echo is_cart() ? 'active' : ''; ?> cart-contents fragment_refresh">
+        <li class="navbar-item">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt="">
+            <?php esc_html_e('Cart', 'your-theme-domain'); ?>
+            <?php echo WC()->cart->get_cart_total(); ?>
+        </li>
+    </a>
+    <?php
+    $fragments['a.cart-contents-desktop'] = ob_get_clean();
+
+    // Mobile cart fragment
+    ob_start();
+    ?>
+    <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="<?php echo $current_cart; ?> cart-contents fragment_refresh">
+        <li class="navbar-item-mobile">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt="">
+            <?php esc_html_e('Cart', 'your-theme-domain'); ?>
+            <?php echo WC()->cart->get_cart_total(); ?>
+        </li>
+    </a>
+    <?php
+    $fragments['a.cart-contents-desktop'] = ob_get_clean();
+
+    // Mobile cart fragment
+    ob_start();
+    ?>
+    <li class="nav-item">
+        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="<?php echo $current_cart; ?>  cart-contents fragment_refresh">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt="">
+            <?php esc_html_e('Cart', 'your-theme-domain'); ?> 
+            <?php echo WC()->cart->get_cart_total(); ?>
+        </a>
+    </li>
+    <?php
+    $fragments['a.cart-contents'] = ob_get_clean();
+    return $fragments;
+});
+
+
 // code for debugging template pathways
 
 // go to wp-admin/config.php and add:

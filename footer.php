@@ -38,7 +38,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="<?php echo $current_cart; ?>">
+                    <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="<?php echo $current_cart; ?>  cart-contents fragment_refresh">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt="">
                         <?php esc_html_e('Cart', 'your-theme-domain'); ?> 
                         <?php echo WC()->cart->get_cart_total(); ?>

@@ -20,6 +20,7 @@ class CHI_Enqueue_Scripts {
             '1.0.0',
             true
         );
+        
 
         wp_enqueue_script(
             'active-navlinks',
