@@ -50,6 +50,7 @@ body {
 
 main {
     max-width: 3200px;
+    min-height: 50vh;
     margin: 0 20%;
     padding: 0;
 }
@@ -101,7 +102,7 @@ h6 {
 }
 
 h1 {
-    padding: 1rem;
+    display: none;
 }
 
 
@@ -772,6 +773,9 @@ table.variations select {
 
 /* my-account.php */
 
+
+/* myaccount navigation */
+
 .woocommerce-MyAccount-navigation-link a {
     text-decoration: none;
     color: inherit;
@@ -782,9 +786,42 @@ table.variations select {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    flex-shrink: 1;
     flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.woocommerce-MyAccount-content {
+    height: 30vh;
+    width: auto;
 }
 
 .woocommerce-MyAccount-content p {
     padding: 1rem;
 }
+
+.woocommerce-MyAccount-navigation-link {
+    position: relative;
+    padding: 25px;
+}
+
+.woocommerce-MyAccount-navigation-link a {
+    padding: 25px;
+    width: 100px;
+    position: relative;
+}
+
+
+/* Style for the cheese icon */
+
+.woocommerce-MyAccount-navigation-link .active-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+
+/*  */

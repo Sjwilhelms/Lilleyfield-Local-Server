@@ -8,21 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const menuToggler = document.querySelector('.navbar-toggler');
     const mobileMenu = document.querySelector('.navbar-list-flex-mobile');
-
     if (menuToggler && mobileMenu) {
         menuToggler.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
     }
 
-    // Active state handling for both desktop and mobile
+    // Get current path
     const currentPath = window.location.pathname;
-    const allNavLinks = document.querySelectorAll('.navbar-list-flex a, .navbar-list-flex-mobile a, .footer-nav-list a');
 
+    // Handle main navigation
+    const allNavLinks = document.querySelectorAll('.navbar-list-flex a, .navbar-list-flex-mobile a, .footer-nav-list a');
     allNavLinks.forEach(link => {
         const href = link.getAttribute('href');
-
-        // More specific path matching
         const isActive =
             href === currentPath ||
             (currentPath.includes('/shop') && href.includes('/shop')) ||
@@ -31,20 +29,36 @@ document.addEventListener('DOMContentLoaded', function() {
             (currentPath.includes('/visit') && href.includes('/visit'));
 
         if (isActive) {
-            // Add active class to link
             link.classList.add('active');
-
-            // Show cheese icon by removing hidden class
             const activeIcon = link.querySelector('.active-icon');
             if (activeIcon) {
                 activeIcon.classList.remove('hidden');
             }
-
-            // Add active styles to the list item
             const navItem = link.querySelector('.navbar-item, .navbar-item-mobile');
             if (navItem) {
                 navItem.classList.add('active-item');
             }
+        }
+    });
+
+    // Handle WooCommerce account navigation
+    const accountNavLinks = document.querySelectorAll('.woocommerce-MyAccount-navigation-link a');
+    accountNavLinks.forEach(link => {
+        // Add cheese icon element if it doesn't exist
+        if (!link.querySelector('.active-icon')) {
+            const iconSpan = document.createElement('span');
+            iconSpan.classList.add('active-icon', 'hidden');
+            iconSpan.innerHTML = `<img src="/wp-content/themes/storefront-child/assets/cheese_favicon_1.png" alt="active indicator">`;
+            link.insertBefore(iconSpan, link.firstChild);
+        }
+
+        // Check if this link's parent has the is-active class
+        if (link.parentElement.classList.contains('is-active')) {
+            const activeIcon = link.querySelector('.active-icon');
+            if (activeIcon) {
+                activeIcon.classList.remove('hidden');
+            }
+            link.classList.add('active');
         }
     });
 });

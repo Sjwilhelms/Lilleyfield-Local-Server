@@ -90,6 +90,15 @@ add_filter('template_include', function($template) {
     return $template;
 }, 99);
 
+// my-account.php customise account navlinks
+
+function custom_wc_account_menu_items($menu_items) {
+    unset($menu_items['downloads']);
+    unset($menu_items['dashboard']);
+    return $menu_items;
+}
+add_filter('woocommerce_account_menu_items', 'custom_wc_account_menu_items');
+
 // code for debugging template pathways
 
 // go to wp-admin/config.php and add:
