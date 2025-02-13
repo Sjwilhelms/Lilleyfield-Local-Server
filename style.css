@@ -301,6 +301,31 @@ h1 {
 }
 
 
+/* front-page.php styles */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.hero-image img {
+    width: 100%;
+}
+
+.about-lilleyfield {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+
 /* 4. Components */
 
 
