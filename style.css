@@ -52,7 +52,7 @@ main {
     max-width: 3200px;
     min-height: 50vh;
     margin: 0 20%;
-    padding: 0;
+    padding: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -100,9 +100,27 @@ main {
     font-style: normal;
 }
 
+
+/* color code */
+
+:root {
+    --accent-color: tomato;
+    --header-color: #D9DABE;
+    --info-color: #EDF060;
+    --text-color: #310D20;
+    --bg-color: #E9E3E6;
+    /* other options */
+    --oxford-blue: #03012C;
+    --icterine: #EDF060;
+    --dark-purple: #310D20;
+}
+
+
+/* 3. Layout */
+
 body {
     font-family: 'DM Sans', sans-serif;
-    color: var(--bg-color);
+    background-color: var(--bg-color);
     color: var(--text-color);
 }
 
@@ -118,20 +136,6 @@ h6 {
 h1 {
     display: none;
 }
-
-
-/* color code */
-
-:root {
-    --accent-color: tomato;
-    --header-color: hsl(0, 0%, 85%);
-    --info-color: blanchedalmond;
-    --text-color: hsl(0, 0%, 1%);
-    --bg-color: hsl(0, 0%, 90%);
-}
-
-
-/* 3. Layout */
 
 
 /* header style */
@@ -314,6 +318,7 @@ h1 {
 
 .hero-image img {
     width: 100%;
+    border-radius: 5px;
 }
 
 .about-lilleyfield {
@@ -896,7 +901,7 @@ a.button.wc-backward {
 }
 
 .cart_totals {
-    background: #f7f7f7;
+    background: var(--bg-color);
     padding: 20px;
     border-radius: 4px;
 }
