@@ -24,6 +24,10 @@ Main stylesheet structure:
 
 /* 1. Reset/Normalize */
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -34,7 +38,7 @@ body {
 }
 
 .site-main {
-    flex: 1;
+    flex: 1 0 auto;
     padding: 2rem;
 }
 
@@ -52,11 +56,14 @@ main {
     max-width: 3200px;
     min-height: 50vh;
     margin: 0 20%;
-    padding: 1rem;
+    flex: 1 0 auto;
+    padding: 2rem;
 }
 
 .home main {
     min-height: 60vh;
+    flex: 1 0 auto;
+    padding: 2rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -251,7 +258,7 @@ h1 {
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
-    bottom: 0;
+    flex-shrink: 0;
     width: 100%;
     background-color: var(--header-color);
     padding: 1rem;
@@ -460,20 +467,6 @@ a.reset_variations:active {
 }
 
 
-/* Notice with a button */
-
-.woocommerce-message .button {
-    /* styles */
-}
-
-
-/* Dismiss (×) button */
-
-.woocommerce-message .woocommerce-close-message {
-    /* styles */
-}
-
-
 /* product-archive.php */
 
 
@@ -618,14 +611,6 @@ ul.products li.product h2 {
     width: auto;
 }
 
-.woocommerce-product-gallery__wrapper {
-    /* Image wrapper */
-}
-
-.woocommerce-product-gallery__image {
-    /* Individual gallery images */
-}
-
 .flex-control-thumbs {
     display: flex;
     gap: 10px;
@@ -734,8 +719,6 @@ table.variations select {
 
 
 /* Tabs Section */
-
-.woocommerce-tabs {}
 
 .tabs.wc-tabs {
     display: flex;
@@ -915,6 +898,17 @@ a.button.wc-backward {
 }
 
 
+/* hide coupons and vouchers */
+
+td.actions div.coupon {
+    display: none;
+}
+
+#pwgc-redeem-gift-card-container {
+    display: none;
+}
+
+
 /* my-account.php */
 
 
@@ -979,10 +973,6 @@ a.button.wc-backward {
     border-radius: 4px;
     transition: all 0.3s ease;
 }
-
-.woocommerce-MyAccount-navigation-link:hover a {}
-
-.woocommerce-MyAccount-navigation-link.is-active a {}
 
 
 /* Content Area Styles */
