@@ -338,119 +338,82 @@ h1 {
 /* 4. Components */
 
 
-/* Base button styles that we'll repeat where needed */
+/* Primary WooCommerce buttons */
 
-ul.products li.product a.button,
-ul.products li.product a.added_to_cart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    text-decoration: none;
-    color: var(--text-color);
-    border: 1px solid;
-    padding: 5px;
-    background-color: var(--info-color);
-    margin-top: 10px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce button.button.alt,
+.woocommerce a.button.alt,
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit.alt {
+    /* Primary button styles */
 }
 
 
-/* Single product page buttons */
+/* Disabled state */
 
-.single_add_to_cart_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    text-decoration: none;
-    color: var(--text-color);
-    border: 1px solid;
-    padding: 5px;
-    background-color: var(--info-color);
-    margin-top: 10px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-
-/* Reset variations button */
-
-a.reset_variations {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    text-decoration: none;
-    color: var(--text-color);
-    border: 1px solid;
-    padding: 5px;
-    background-color: var(--info-color);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-
-/* Hover states for all buttons */
-
-ul.products li.product a.button:hover,
-ul.products li.product a.added_to_cart:hover,
-.single_add_to_cart_button:hover,
-a.reset_variations:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-1px);
-}
-
-
-/* Active states for all buttons */
-
-ul.products li.product a.button:active,
-ul.products li.product a.added_to_cart:active,
-.single_add_to_cart_button:active,
-a.reset_variations:active {
-    transform: translateY(0);
+.woocommerce button.button:disabled,
+.woocommerce button.button:disabled[disabled] {
+    /* Disabled button styles */
 }
 
 
 /* Loading state */
 
-.button.loading {
-    opacity: 0.8;
-    padding-right: 35px;
-    position: relative;
-}
-
-.button.loading::after {
-    content: "";
-    position: absolute;
-    right: 10px;
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--info-color);
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+.woocommerce button.button.loading {
+    /* Loading state styles */
 }
 
 
-/* Responsive adjustments */
+/* Cart buttons */
 
-@media screen and (max-width: 768px) {
-    .single_add_to_cart_button {
-        width: 100%;
-    }
-    ul.products li.product a.button,
-    ul.products li.product a.added_to_cart,
-    a.reset_variations {
-        width: 100%;
-    }
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart table.cart td.actions .coupon .button {
+    /* Cart-specific button styles */
+}
+
+
+/* Checkout buttons */
+
+.woocommerce-checkout #payment #place_order,
+.woocommerce-checkout #payment .button {
+    /* Checkout-specific button styles */
+}
+
+
+/* Account page buttons */
+
+.woocommerce-account .woocommerce-MyAccount-content .button,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+    /* Account page button styles */
+}
+
+
+/* Single product buttons */
+
+.single-product .product .single_add_to_cart_button,
+.single-product .product .product_type_simple,
+.single-product .product .product_type_grouped,
+.single-product .product .product_type_external,
+.single-product .product .product_type_variable {
+    /* Single product button styles */
+}
+
+
+/* Shop/archive page buttons */
+
+.woocommerce ul.products li.product .button {
+    /* Shop page button styles */
+}
+
+
+/* General form buttons */
+
+.woocommerce form .form-row button.button,
+.woocommerce form .form-row input.button {
+    /* Form button styles */
 }
 
 
@@ -510,11 +473,13 @@ ul.products li.product {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     width: 100%;
     aspect-ratio: 2/3;
+}
+
+ul.products li.product:hover {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px white;
 }
 
 
@@ -841,14 +806,6 @@ table.variations select {
     padding: 1rem;
 }
 
-.woocommerce-cart .cart_item,
-a.button.wc-backward {
-    padding: 15px;
-    border-bottom: 1px solid var(--text-color);
-    color: inherit;
-    text-decoration: none;
-}
-
 .woocommerce-cart .cart_item img {
     padding: 0.5rem;
     height: auto;
@@ -889,12 +846,6 @@ a.button.wc-backward {
 .cart_totals .order-total {
     font-size: 1.2em;
     font-weight: bold;
-}
-
-.wc-proceed-to-checkout .button {
-    width: 100%;
-    text-align: center;
-    margin-top: 15px;
 }
 
 
@@ -1023,27 +974,6 @@ td.actions div.coupon {
     border: 1px solid var(--text-color);
     border-radius: 4px;
     background-color: var(--bg-color);
-}
-
-
-/* Buttons */
-
-.woocommerce-form-login__submit,
-.woocommerce-form-register__submit,
-button[name="save_address"] {
-    background-color: var(--info-color);
-    color: var(--text-color);
-    padding: 0.75rem 1.5rem;
-    border: 1px solid var(--text-color);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.woocommerce-form-login__submit:hover,
-.woocommerce-form-register__submit:hover,
-button[name="save_address"]:hover {
-    background-color: var(--accent-color);
 }
 
 
