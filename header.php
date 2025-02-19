@@ -61,7 +61,8 @@
                         $categories = get_terms([
                             'taxonomy' => 'product_cat',
                             'hide_empty' => true,
-                            'parent' => 0 // Only top-level categories
+                            'parent' => 0,
+                            'exclude' => get_term_by('slug', 'uncategorized', 'product_cat')->term_id
                         ]);
 
                         if (!empty($categories) && !is_wp_error($categories)) {
