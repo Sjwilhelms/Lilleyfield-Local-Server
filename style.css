@@ -433,135 +433,6 @@ h1 {
 /* 4. Components */
 
 
-/* 4. Components */
-
-
-/* Primary WooCommerce buttons */
-
-.woocommerce #respond input#submit,
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button,
-.woocommerce button.button.alt,
-.woocommerce a.button.alt,
-.woocommerce input.button.alt,
-.woocommerce #respond input#submit.alt {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    font-weight: 600;
-    padding: 0.75em 1.5em;
-    border-radius: 4px;
-    border: none;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-}
-
-.woocommerce #respond input#submit:hover,
-.woocommerce a.button:hover,
-.woocommerce button.button:hover,
-.woocommerce input.button:hover,
-.woocommerce button.button.alt:hover,
-.woocommerce a.button.alt:hover,
-.woocommerce input.button.alt:hover,
-.woocommerce #respond input#submit.alt:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    text-decoration: none;
-}
-
-
-/* Disabled state */
-
-.woocommerce button.button:disabled,
-.woocommerce button.button:disabled[disabled] {
-    background-color: rgba(255, 99, 71, 0.5);
-    /* tomato with opacity */
-    color: var(--bg-color);
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-
-/* Loading state */
-
-.woocommerce button.button.loading {
-    opacity: 0.7;
-    padding-right: 2.5em;
-    position: relative;
-}
-
-.woocommerce button.button.loading::after {
-    font-family: WooCommerce;
-    content: "\e01c";
-    vertical-align: top;
-    font-weight: 400;
-    position: absolute;
-    top: 50%;
-    right: 1em;
-    animation: spin 2s linear infinite;
-    margin-top: -0.5em;
-}
-
-
-/* Cart buttons */
-
-.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
-.woocommerce-cart table.cart td.actions .coupon .button {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    font-size: 1em;
-    padding: 1em 1.5em;
-}
-
-.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
-    font-size: 1.1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-
-/* Checkout buttons */
-
-.woocommerce-checkout #payment #place_order,
-.woocommerce-checkout #payment .button {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    font-size: 1.1em;
-    padding: 1em 2em;
-    width: 100%;
-    margin-top: 1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.woocommerce-checkout #payment #place_order:hover,
-.woocommerce-checkout #payment .button:hover {
-    background-color: var(--text-color);
-}
-
-
-/* Account page buttons */
-
-.woocommerce-account .woocommerce-MyAccount-content .button,
-.woocommerce-account .woocommerce-MyAccount-navigation ul li a {
-    color: var(--text-color);
-    border-radius: 4px;
-    padding: 0.6em 1.2em;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.woocommerce-account .woocommerce-MyAccount-content .button:hover,
-.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover {
-    text-decoration: none;
-}
-
-
-/* 4. Components */
-
-
 /* Primary WooCommerce buttons */
 
 .woocommerce #respond input#submit,
@@ -704,17 +575,7 @@ h1 {
 /* Shop/archive page buttons */
 
 .woocommerce ul.products li.product .button {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    font-weight: 500;
-    font-size: 0.85em;
-    border-radius: 4px;
-    padding: 0.6em 1em;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    width: 100%;
-    text-align: center;
-    margin-top: 0.5em;
+    display: none;
 }
 
 .woocommerce ul.products li.product .button:hover {
@@ -1298,6 +1159,10 @@ td.actions div.coupon {
 
 /* My Account Page Layout */
 
+.woocommerce-MyAccount-content p {
+    margin-bottom: 1rem;
+}
+
 .woocommerce-account .woocommerce {
     display: flex;
     flex-direction: column;
@@ -1338,16 +1203,12 @@ td.actions div.coupon {
     margin-left: 1rem;
     color: var(--text-color);
     text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
 }
 
 
 /* Content Area Styles */
 
-.woocommerce-MyAccount-content {
-    border-radius: 8px;
-    min-height: 50vh;
+.woocommerce-orders-table {
     width: 100%;
 }
 
@@ -1355,6 +1216,13 @@ td.actions div.coupon {
     text-decoration: none;
     color: inherit;
 }
+
+.woocommerce-MyAccount-content li {
+    list-style: none;
+}
+
+
+/* orders list table */
 
 .woocommerce-orders-table td {
     padding: 2rem;
@@ -1386,15 +1254,32 @@ td.actions div.coupon {
 }
 
 
+/* order detail lists table */
+
+.woocommerce-order-details {
+    padding: 1rem;
+}
+
+.woocommerce-MyAccount-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.woocommerce-table--order-details td {
+    padding: 1rem;
+}
+
+.woocommerce-table {}
+
+
 /* Form Styles */
 
 .woocommerce-MyAccount-content form {
     max-width: 600px;
     margin: 0 auto;
-}
-
-.woocommerce-MyAccount-content p {
-    margin-bottom: 1rem;
 }
 
 .woocommerce-form-login,
