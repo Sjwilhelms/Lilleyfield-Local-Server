@@ -1150,6 +1150,7 @@ table.variations select {
 .related.products ul.products li.product {
     max-width: 300px;
     width: 100%;
+    margin: 1rem;
 }
 
 
@@ -1298,8 +1299,10 @@ td.actions div.coupon {
 /* My Account Page Layout */
 
 .woocommerce-account .woocommerce {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     padding: 2rem;
 }
@@ -1313,17 +1316,14 @@ td.actions div.coupon {
 
 /* Navigation Styles */
 
-.woocommerce-MyAccount-navigation {
-    border-radius: 8px;
-    padding: 1rem;
-}
-
 .woocommerce-MyAccount-navigation ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
@@ -1347,8 +1347,42 @@ td.actions div.coupon {
 
 .woocommerce-MyAccount-content {
     border-radius: 8px;
-    padding: 2rem;
     min-height: 50vh;
+    width: 100%;
+}
+
+.woocommerce-MyAccount-content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.woocommerce-orders-table td {
+    padding: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .woocommerce-orders-table thead {
+        display: none;
+    }
+    .woocommerce-orders-table {
+        width: 100%;
+    }
+    .woocommerce-orders-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+    }
+    .woocommerce-orders-table tbody td {
+        display: block;
+        text-align: right;
+        padding: 0.5rem;
+        border-bottom: 1px solid #ddd;
+    }
+    .woocommerce-orders-table tbody td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
 }
 
 
@@ -1357,6 +1391,10 @@ td.actions div.coupon {
 .woocommerce-MyAccount-content form {
     max-width: 600px;
     margin: 0 auto;
+}
+
+.woocommerce-MyAccount-content p {
+    margin-bottom: 1rem;
 }
 
 .woocommerce-form-login,
