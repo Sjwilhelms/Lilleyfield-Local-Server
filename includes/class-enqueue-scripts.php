@@ -40,6 +40,14 @@ class CHI_Enqueue_Scripts
             '1.0.0',
             true
         );
+
+        wp_enqueue_script(
+            'hero-video',
+            CHI_THEME_DIR_URI . '/js/hero-video.js',
+            ['jquery'],
+            '1.0.0',
+            true
+        );
     }
 
     public static function get_instance()
