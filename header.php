@@ -20,6 +20,30 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header>
+        <!-- Video Section -->
+        <section class="video-section">
+            <?php if (is_home() || is_front_page()) : ?>
+                <div class="video-container">
+                    <?php
+
+                    $video_id = 110;
+
+                    $video_url = wp_get_attachment_url($video_id);
+                    if ($video_url) :
+                    ?>
+                        <video autoplay loop muted playsinline>
+                            <source src="<?php echo esc_url($video_url); ?>" type="<?php echo esc_attr(get_post_mime_type($video_id)); ?>">
+                            Your browser does not support the video tag.
+                        </video>
+                    <?php endif; ?>
+
+                    <?php
+
+                    ?>
+                </div>
+            <?php endif; ?>
+        </section>
+
         <div class="header-container">
             <div class="navbar-container">
                 <div class="navbar-fullscreen">
