@@ -21,28 +21,14 @@
     <?php wp_body_open(); ?>
     <header>
         <!-- Video Section -->
-        <section class="video-section">
-            <?php if (is_home() || is_front_page()) : ?>
+        <?php if (is_front_page()) : ?>
+            <div class="parallax-container">
                 <div class="video-container">
-                    <?php
-
-                    $video_id = 110;
-
-                    $video_url = wp_get_attachment_url($video_id);
-                    if ($video_url) :
-                    ?>
-                        <video autoplay loop muted playsinline>
-                            <source src="<?php echo esc_url($video_url); ?>" type="<?php echo esc_attr(get_post_mime_type($video_id)); ?>">
-                            Your browser does not support the video tag.
-                        </video>
-                    <?php endif; ?>
-
-                    <?php
-
-                    ?>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/d3oltSUePs4?autoplay=1&mute=1&loop=1&playlist=d3oltSUePs4&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
                 </div>
-            <?php endif; ?>
-        </section>
+            </div>
+        <?php endif; ?>
 
         <div class="header-container">
             <div class="navbar-container">
@@ -103,44 +89,6 @@
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt="">
                             <?php esc_html_e('Shop', 'your-theme-domain'); ?>
                         </a>
-                        <ul class="dropdown-menu shop-dropdown">
-                            <?php
-                            // Get all product categories
-                            $categories = get_terms([
-                                'taxonomy' => 'product_cat',
-                                'hide_empty' => true,
-                                'parent' => 0,
-                                'exclude' => get_term_by('slug', 'uncategorized', 'product_cat')->term_id
-                            ]);
-
-                            if (!empty($categories) && !is_wp_error($categories)) {
-                                foreach ($categories as $category) {
-                                    // Get subcategories
-                                    $subcategories = get_terms([
-                                        'taxonomy' => 'product_cat',
-                                        'hide_empty' => true,
-                                        'parent' => $category->term_id
-                                    ]);
-
-                                    if (!empty($subcategories) && !is_wp_error($subcategories)) {
-                                        // Category with subcategories
-                                        echo '<li class="has-children">';
-                                        echo '<a href="' . esc_url(get_term_link($category)) . '">' . esc_html($category->name) . ' <span class="submenu-arrow">›</span></a>';
-                                        echo '<ul class="sub-dropdown">';
-                                        foreach ($subcategories as $subcategory) {
-                                            echo '<li><a href="' . esc_url(get_term_link($subcategory)) . '">' . esc_html($subcategory->name) . '</a></li>';
-                                        }
-                                        echo '</ul>';
-                                        echo '</li>';
-                                    } else {
-                                        // Category without subcategories
-                                        echo '<li><a href="' . esc_url(get_term_link($category)) . '">' . esc_html($category->name) . '</a></li>';
-                                    }
-                                }
-                            }
-                            ?>
-                            <li><a href="<?php echo esc_url(get_permalink(wc_get_page_id('shop'))); ?>"><?php esc_html_e('View All Products', 'your-theme-domain'); ?></a></li>
-                        </ul>
                     </li>
 
                     <!-- Visit link -->
@@ -159,18 +107,7 @@
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cheese_favicon_1.png" class="active-icon" alt="">
                             <?php esc_html_e('Account', 'your-theme-domain'); ?>
                         </a>
-                        <ul class="dropdown-menu account-dropdown">
-                            <?php if (is_user_logged_in()) : ?>
-                                <li><a href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')); ?>"><?php esc_html_e('My Account', 'your-theme-domain'); ?></a></li>
-                                <li><a href="<?php echo esc_url(wc_get_account_endpoint_url('orders')); ?>"><?php esc_html_e('Orders', 'your-theme-domain'); ?></a></li>
-                                <li><a href="<?php echo esc_url(wc_get_account_endpoint_url('edit-address')); ?>"><?php esc_html_e('Addresses', 'your-theme-domain'); ?></a></li>
-                                <li><a href="<?php echo esc_url(wc_get_account_endpoint_url('edit-account')); ?>"><?php esc_html_e('Account Details', 'your-theme-domain'); ?></a></li>
-                                <li><a href="<?php echo esc_url(wp_logout_url(home_url())); ?>"><?php esc_html_e('Logout', 'your-theme-domain'); ?></a></li>
-                            <?php else : ?>
-                                <li><a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>"><?php esc_html_e('Login', 'your-theme-domain'); ?></a></li>
-                                <li><a href="<?php echo esc_url(add_query_arg('action', 'register', wc_get_page_permalink('myaccount'))); ?>"><?php esc_html_e('Register', 'your-theme-domain'); ?></a></li>
-                            <?php endif; ?>
-                        </ul>
+
                     </li>
 
                     <!-- Cart link -->
