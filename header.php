@@ -197,10 +197,13 @@
             </ul>
         </div>
 
-        <div class="info-banner">
-            <p><?php echo sprintf(
-                    __('Monday to Saturday, from 0900 to 1700, at <a href="%s" target="_blank">Lemon Street Market</a>, Lemon Street, Truro, TR1 2QD', 'your-theme-domain'),
-                    'https://www.lemonstreetmarket.co.uk/'
-                ); ?></p>
-        </div>
+
+        <?php if (!is_page('home')) : ?>
+            <div class="info-banner">
+                <p><?php echo sprintf(
+                        __('Monday to Saturday, from 0900 to 1700, at <a href="%s" target="_blank">Lemon Street Market</a>, Lemon Street, Truro, TR1 2QD', 'your-theme-domain'),
+                        'https://www.lemonstreetmarket.co.uk/'
+                    ); ?></p>
+            </div>
+        <?php endif; ?>
     </header>

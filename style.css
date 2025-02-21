@@ -104,7 +104,7 @@ main {
     --accent-color: tomato;
     --header-color: #D9DABE;
     --info-color: #EDF060;
-    --text-color: #310D20;
+    --text-color: #03012C;
     --bg-color: #E9E3E6;
     /* other options */
     --oxford-blue: #03012C;
@@ -399,6 +399,9 @@ h1 {
 
 /* front-page.php styles */
 
+
+/* style for the hero video */
+
 .video-section {
     width: 100vw;
     position: relative;
@@ -424,27 +427,135 @@ video {
     display: block;
 }
 
-.about-container {
-    margin: 1rem;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-shrink: 1;
-    text-align: center;
+
+/* Media query for small screens (mobile devices) */
+
+@media screen and (max-width: 768px) {
+    .video-section {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+    .video-container {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    video {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
-.about-item {
+
+/* about our story */
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.about-contact {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 20px;
+    font-size: 2rem;
     width: 30vw;
-    height: 30vh;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30vw;
+}
+
+.contact-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#insta-svg {
+    height: 2rem;
+}
+
+.about-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    width: 90vw;
+}
+
+.about-map iframe {
+    width: 70vw;
+    height: 20vh;
 }
 
 .about-img {
-    border-radius: 50%;
-    margin: 1rem;
+    display: none;
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .about-contact {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 20px;
+        font-size: 2rem;
+        width: 90vw;
+    }
+    .about-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90vw;
+    }
+    .contact-item a {
+        color: inherit;
+        text-decoration: none;
+    }
+    #insta-svg {
+        height: 2rem;
+    }
+    .about-map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+        width: 90vw;
+    }
+    .about-img {
+        width: 100vw;
+        height: auto;
+    }
+}
 
 
 /* 4. Components */
