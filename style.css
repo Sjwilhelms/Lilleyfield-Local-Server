@@ -476,7 +476,8 @@ video {
 .about-contact {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     font-size: 2rem;
     width: 30vw;
@@ -485,6 +486,8 @@ video {
 .about-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     width: 30vw;
 }
