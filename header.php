@@ -20,16 +20,6 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header>
-        <!-- Video Section -->
-        <?php if (is_front_page()) : ?>
-            <div class="parallax-container">
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/d3oltSUePs4?autoplay=1&mute=1&loop=1&playlist=d3oltSUePs4&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        <?php endif; ?>
-
         <div class="header-container">
             <div class="navbar-container">
                 <div class="navbar-fullscreen">
@@ -39,17 +29,16 @@
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo_inline.png" alt="<?php bloginfo('name'); ?>">
                             </a>
                         </div>
+
                         <div class="navbar-brand-mobile hidden">
                             <a href="<?php echo esc_url(home_url('/')); ?>">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/lilleyfield_text.png" alt="<?php bloginfo('name'); ?>">
                             </a>
                         </div>
-
                         <?php
                         // Check if the shop page exists and is published
                         $shop_page_id = wc_get_page_id('shop');
                         $show_woocommerce_nav = ($shop_page_id > 0 && get_post_status($shop_page_id) === 'publish');
-
                         // Only display WooCommerce navigation elements if shop is published
                         if ($show_woocommerce_nav) {
                         ?>
@@ -60,8 +49,8 @@
                         }
                         // If shop is not published, none of these navigation elements will be shown
                         ?>
-
                     </div>
+
                 </div>
             </div>
 
