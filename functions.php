@@ -48,6 +48,32 @@ require_once CHI_THEME_BASE_DIR . '/includes/class-enqueue-scripts.php';
 // Initialize classes
 CHI_Enqueue_Scripts::get_instance();
 
+// register custom menus
+
+function mytheme_register_menus()
+{
+    register_nav_menus(array(
+        'primary' => __('Primary Menu', 'storefront-child'),
+        'secondary' => __('Secondary Menu', 'storefront-child'),
+        // Add more as needed
+    ));
+}
+add_action('init', 'mytheme_register_menus');
+
+// add searchbar to custom menu
+
+function add_search_to_nav($items, $args)
+{
+    if ($args->theme_location == 'primary') {
+        $search_form = '<li class="menu-item search-item">';
+        $search_form .= get_product_search_form(false);
+        $search_form .= '</li>';
+        return $items . $search_form;
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'add_search_to_nav', 10, 2);
+
 // add woocommerce support
 
 function mytheme_add_woocommerce_support()
@@ -66,6 +92,45 @@ function jk_dequeue_styles($enqueue_styles)
     // unset($enqueue_styles['woocommerce-smallscreen']);
     return $enqueue_styles;
 }
+
+// add ajax add to cart to custom menu
+
+// Add cart icon and count to primary menu
+function add_cart_to_primary_menu($items, $args)
+{
+    // Only add to the primary menu location
+    if ($args->theme_location == 'primary') {
+        // Get cart count
+        $cart_count = WC()->cart->get_cart_contents_count();
+        $cart_url = wc_get_cart_url();
+
+        // Only show count if there are items in cart
+        $cart_count_html = $cart_count > 0 ? '<span class="count">' . esc_html($cart_count) . '</span>' : '';
+
+        // Create cart menu item
+        $cart_item = '<li class="menu-item cart-menu-item">';
+        $cart_item .= '<a href="' . esc_url($cart_url) . '" class="cart-contents" title="' . esc_attr__('View your shopping cart', 'storefront-child') . '">';
+        $cart_item .= '<span class="cart-icon">🛒</span>' . $cart_count_html;
+        $cart_item .= '</a>';
+        $cart_item .= '</li>';
+
+        // Add cart item to the end of the menu
+        $items = $items . $cart_item;
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'add_cart_to_primary_menu', 15, 2);
+
+// Update cart count when adding/removing products via AJAX
+function cart_count_fragments($fragments)
+{
+    $cart_count = WC()->cart->get_cart_contents_count();
+
+    $fragments['span.count'] = $cart_count > 0 ? '<span class="count">' . esc_html($cart_count) . '</span>' : '';
+
+    return $fragments;
+}
+add_filter('woocommerce_add_to_cart_fragments', 'cart_count_fragments');
 
 // remove wordpress default css
 
