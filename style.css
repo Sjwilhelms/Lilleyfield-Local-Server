@@ -177,21 +177,7 @@ h1 {
     width: 100%;
 }
 
-@media screen and ( max-width: 1000px) {
-    .primary-menu,
-    .main-navigation ul,
-    #site-navigation ul,
-    .menu-primary-container>ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        list-style: none;
-        gap: 20px;
-        margin: 0;
-        padding: 1rem;
-    }
-}
+@media screen and ( max-width: 1000px) {}
 
 
 /* info banner */
@@ -207,18 +193,15 @@ h1 {
 /* navbar tablets and under */
 
 @media screen and (max-width: 768px) {
+    .header-navigation-wrapper {
+        line-height: 0;
+    }
     .navbar {
         display: flex;
         padding: 1rem;
         justify-content: space-between;
     }
     .info-banner {
-        display: none;
-    }
-    .navbar-item {
-        display: none;
-    }
-    .navbar-list-flex {
         display: none;
     }
     .navbar {
@@ -230,8 +213,8 @@ h1 {
     .navbar-toggler {
         display: block;
         flex-shrink: 0.5;
-        width: 75px;
-        height: 75px;
+        width: 85px;
+        height: 85px;
         padding: 1rem;
         padding-bottom: 2rem;
     }
@@ -243,6 +226,31 @@ h1 {
     .navbar-brand-mobile {
         display: block;
         padding: 1rem;
+    }
+    .main-navigation {
+        display: none;
+    }
+    .main-navigation.active {
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    .primary-menu,
+    .main-navigation ul,
+    #site-navigation ul,
+    .menu-primary-container>ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
     }
 }
 

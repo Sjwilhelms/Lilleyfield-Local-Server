@@ -1,5 +1,5 @@
 const toggleButton = document.querySelector('.navbar-toggler');
-const navbarMenu = document.querySelector('.header-navigation-wrapper');
+const navbarMenu = document.querySelector('.main-navigation');
 
 // navbar toggler
 
@@ -14,7 +14,7 @@ function checkWidth() {
 }
 
 toggleButton.addEventListener('click', () => {
-    navbarMenu.classList.toggle('hidden');
+    navbarMenu.classList.toggle('active');
 });
 
 window.addEventListener('resize', () => {
