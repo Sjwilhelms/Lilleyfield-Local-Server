@@ -3,7 +3,7 @@ Theme Name: Storefront Child
 Theme URI: lilleyfieldcheese.co.uk
 Description: Child theme for Storefront
 Author: Your Name
-Author URI: lilleyfieldcheese.co.uk
+Author URI: mayonet.uk
 Template: storefront
 Version: 1.0
 */
@@ -27,9 +27,10 @@ header.entry-header {
 }
 
 .site-header img.custom-logo {
-    height: 150px;
-    width: auto;
-    git
+    height: auto;
+    max-width: 500px;
+    width: 100%;
+    overflow: visible;
 }
 
 header.woocommerce-products-header {
@@ -42,6 +43,26 @@ header.woocommerce-products-header {
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+.main-navigation ul li::after {
+    content: '';
+    color: inherit;
+    background: linear-gradient(to right, red, blue);
+    border-radius: 100px;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+
+.main-navigation ul li:hover::after {
+    width: 100%;
+    height: 5px;
+    transition: width 300ms;
 }
 
 
@@ -76,7 +97,10 @@ div.storefront-breadcrumb {
     padding-bottom: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+    .site-header img.custom-logo {
+        content: url('http://lilleyfield-cheese-co.local/wp-content/uploads/2025/02/lilleyfield_text.png');
+    }
     .main-navigation ul {
         display: flex;
         flex-direction: column;
