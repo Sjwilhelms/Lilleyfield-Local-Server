@@ -65,6 +65,10 @@ header.woocommerce-products-header {
     transition: width 300ms;
 }
 
+button#site-navigation-menu-toggle {
+    margin-top: 1rem;
+}
+
 
 /* breadcrumbs style */
 
@@ -88,6 +92,11 @@ div.storefront-breadcrumb {
 .product_type_variable {
     display: none;
 }
+
+
+/* woocommerce my account main  */
+
+.woocommerce-MyAccount-Navigation ul {}
 
 
 /* footer styles */
