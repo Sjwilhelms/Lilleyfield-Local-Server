@@ -1,0 +1,87 @@
+/*
+Theme Name: Storefront Child
+Theme URI: lilleyfieldcheese.co.uk
+Description: Child theme for Storefront
+Author: Your Name
+Author URI: lilleyfieldcheese.co.uk
+Template: storefront
+Version: 1.0
+*/
+
+
+/* global styles */
+
+h1 {
+    display: none;
+}
+
+
+/* header styles */
+
+header.entry-header {
+    display: none;
+}
+
+.site-header {
+    border: none;
+}
+
+.site-header img.custom-logo {
+    height: 150px;
+    width: auto;
+    git
+}
+
+header.woocommerce-products-header {
+    display: none;
+}
+
+.main-navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+
+/* breadcrumbs style */
+
+div.storefront-breadcrumb {
+    margin-bottom: 0;
+}
+
+
+/* shop main area */
+
+.content-area {
+    margin: 0;
+}
+
+.storefront-sorting {
+    margin: 0;
+}
+
+.wp-block-button,
+.product_type_simple,
+.product_type_variable {
+    display: none;
+}
+
+
+/* footer styles */
+
+.site-footer {
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-navigation ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+}
