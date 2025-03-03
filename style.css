@@ -18,12 +18,17 @@ h1 {
 
 /* header styles */
 
+.site-header img.custom-logo {
+    content: url('http://lilleyfield-cheese-co.local/wp-content/uploads/2025/02/logo_inline.png');
+}
+
 header.entry-header {
     display: none;
 }
 
 .site-header {
     border: none;
+    padding-bottom: 20px
 }
 
 .site-header img.custom-logo {
@@ -43,6 +48,10 @@ header.woocommerce-products-header {
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+.main-navigation ul li:hover {
+    color: inherit!important;
 }
 
 .main-navigation ul li::after {
@@ -70,21 +79,15 @@ button#site-navigation-menu-toggle {
 }
 
 
-/* breadcrumbs style */
-
-div.storefront-breadcrumb {
-    margin-bottom: 0;
-}
-
-
 /* shop main area */
 
 .content-area {
     margin: 0;
+    padding: 0;
 }
 
 .storefront-sorting {
-    margin: 0;
+    display: none;
 }
 
 .wp-block-button,
@@ -107,7 +110,9 @@ div.storefront-breadcrumb {
 }
 
 @media only screen and (max-width: 768px) {
+    /* header styles */
     .site-header img.custom-logo {
+        margin-top: 1rem;
         content: url('http://lilleyfield-cheese-co.local/wp-content/uploads/2025/02/lilleyfield_text.png');
     }
     .main-navigation ul {
@@ -116,5 +121,10 @@ div.storefront-breadcrumb {
         justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
+    }
+    /* footer styles */
+    .site-footer {
+        padding: 0;
+        padding-bottom: 50px;
     }
 }
