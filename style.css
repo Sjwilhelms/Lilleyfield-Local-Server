@@ -28,7 +28,9 @@ header.entry-header {
 
 .site-header {
     border: none;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    background-color: #D9DABE;
 }
 
 .site-header img.custom-logo {
@@ -38,8 +40,28 @@ header.entry-header {
     overflow: visible;
 }
 
+form.woocommerce-product-search {
+    margin-top: 10px;
+}
+
 header.woocommerce-products-header {
     display: none;
+}
+
+
+/* Remove default hover styles from main navigation menu items */
+
+.main-navigation ul li a:hover,
+.site-header-cart .widget_shopping_cart a:hover,
+.site-navigation .menu a:hover,
+.storefront-primary-navigation a:hover {
+    color: inherit !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 .main-navigation ul {
@@ -76,6 +98,7 @@ header.woocommerce-products-header {
 
 button#site-navigation-menu-toggle {
     margin-top: 1rem;
+    background-color: #D9DABE;
 }
 
 
@@ -107,6 +130,11 @@ button#site-navigation-menu-toggle {
 .site-footer {
     padding: 0;
     padding-bottom: 10px;
+    background-color: #D9DABE;
+}
+
+.storefront-handheld-footer-bar {
+    background-color: #D9DABE!important;
 }
 
 @media only screen and (max-width: 768px) {
