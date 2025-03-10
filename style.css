@@ -8,6 +8,13 @@ Template: storefront
 Version: 1.0
 */
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 
 /* global styles */
 
@@ -105,7 +112,7 @@ button#site-navigation-menu-toggle {
 /* shop main area */
 
 .content-area {
-    margin: 0;
+    margin-top: 2rem;
     padding: 0;
 }
 
@@ -186,19 +193,14 @@ button#site-navigation-menu-toggle {
 /* my account orders */
 
 
-/* remove random semi-colon from third row of table on small screens */
-
-tr.woocommerce-orders-table__row>td:nth-child(5) {
-    border-bottom: 1px solid grey;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
-
-
 /* my account payment methods */
 
 td.woocommerce-PaymentMethod:nth-child(3)::before {
     display: none;
+}
+
+table.woocommerce-MyAccount-paymentMethods a {
+    margin-bottom: 20px
 }
 
 
@@ -234,6 +236,12 @@ td.woocommerce-PaymentMethod:nth-child(3)::before {
         position: relative;
         display: inline-block;
         margin-right: 20px;
+    }
+    /* remove random semi-colon from third row of table on small screens */
+    tr.woocommerce-orders-table__row>td:nth-child(5) {
+        border-bottom: 1px solid grey;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
     }
     /* footer styles */
     .site-footer {
