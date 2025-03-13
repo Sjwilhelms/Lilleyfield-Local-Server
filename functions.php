@@ -58,3 +58,10 @@ function custom_preload_logo_images()
     echo '<link rel="preload" href="' . esc_url(get_stylesheet_directory_uri() . '/wp-content/uploads/2025/02/lilleyfield_text.png') . '" as="image">';
 }
 add_action('wp_head', 'custom_preload_logo_images', 1);
+
+// js function for controlling the header
+function add_custom_scripts()
+{
+    wp_enqueue_script('hideHeader-js', get_stylesheet_directory_uri() . '/js/hideHeader.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'add_custom_scripts');
