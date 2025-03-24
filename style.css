@@ -98,27 +98,26 @@ header.woocommerce-products-header {
 .main-navigation ul li::after {
     content: '';
     color: inherit;
-    background: linear-gradient(to right, red, blue);
+    background: black!important;
     border-radius: 100px;
     margin: 0 auto;
     position: absolute;
-    height: 5px;
+    height: 2px;
     transform: scale(0);
     transform-origin: center;
     transition: transform 300ms ease;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 90%;
 }
 
 .main-navigation ul li:hover::after {
     transform: scale(1);
 }
 
-button#site-navigation-menu-toggle {
-    margin-top: 1rem;
-    background-color: #D9DABE;
+.sub-menu>li {
+    margin: 1rem;
 }
 
 
@@ -180,7 +179,7 @@ button#site-navigation-menu-toggle {
 }
 
 
-/* add linear gradiant hover effect  */
+/* add underline hover effect  */
 
 .woocommerce-MyAccount-navigation ul li::after {
     content: '';
@@ -220,6 +219,9 @@ table.woocommerce-MyAccount-paymentMethods a {
     margin-bottom: 20px
 }
 
+
+/* on small screens */
+
 @media only screen and (max-width: 768px) {
     /* header styles */
     /* change logo for small screens */
@@ -237,6 +239,11 @@ table.woocommerce-MyAccount-paymentMethods a {
         justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
+        padding-top: 1rem;
+    }
+    #site-navigation-menu-toggle {
+        margin-top: 1rem;
+        background-color: #D9DABE;
     }
     /* account content */
     /* account menu styles */
