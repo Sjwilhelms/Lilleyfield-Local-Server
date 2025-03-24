@@ -1,4 +1,8 @@
 <?php
+
+
+
+// enqueue custom css
 function child_theme_enqueue_styles()
 {
     $parent_style = 'parent-style';
@@ -13,6 +17,7 @@ function child_theme_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles');
 
+
 // Redirect Storefront custom logo to shop page
 
 function storefront_child_custom_logo_link($html)
@@ -25,7 +30,7 @@ function storefront_child_custom_logo_link($html)
 }
 add_filter('get_custom_logo', 'storefront_child_custom_logo_link');
 
-//   Remove WooCommerce breadcrumbs in Storefront theme
+// Remove WooCommerce breadcrumbs in Storefront theme
 
 function remove_storefront_woocommerce_breadcrumbs()
 {
@@ -59,7 +64,7 @@ function custom_preload_logo_images()
 }
 add_action('wp_head', 'custom_preload_logo_images', 1);
 
-// js function for controlling the header
+// call js function for controlling the header
 function add_custom_scripts()
 {
     wp_enqueue_script('hideHeader-js', get_stylesheet_directory_uri() . '/js/hideHeader.js', array('jquery'), '1.0', true);
