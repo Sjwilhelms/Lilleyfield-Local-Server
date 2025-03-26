@@ -22,6 +22,10 @@ h1 {
     display: none;
 }
 
+:root {
+    --main-header: #ffe5d4;
+}
+
 
 /* header styles */
 
@@ -37,7 +41,7 @@ header.entry-header {
     border: none;
     padding-bottom: 20px;
     margin-bottom: 10px;
-    background-color: #D9DABE;
+    background-color: var(--main-header);
 }
 
 .site-header img.custom-logo {
@@ -64,7 +68,7 @@ header.woocommerce-products-header {
 }
 
 .storefront-handheld-footer-bar {
-    background-color: #D9DABE;
+    background-color: var(--main-header);
 }
 
 
@@ -243,7 +247,18 @@ table.woocommerce-MyAccount-paymentMethods a {
     }
     #site-navigation-menu-toggle {
         margin-top: 1rem;
-        background-color: #D9DABE;
+        background-color: var(--main-header);
+    }
+    ul.sub-menu:nth-child(3) {
+        margin: 0;
+        padding: 0;
+    }
+    #menu-main-menu-1>li:nth-child(1) {
+        display: block;
+    }
+    .main-navigation ul li a {
+        display: flex;
+        justify-content: center;
     }
     /* account content */
     /* account menu styles */
